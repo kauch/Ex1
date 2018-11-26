@@ -6,7 +6,6 @@ import org.joda.time.LocalDate;
 public class Person {
 	private int ID;
 	private String name;
-	private boolean sex;
 	private LocalDate birthDate;
 	
 	
@@ -14,14 +13,12 @@ public class Person {
 	 * Constructor class Person
 	 * @param iD
 	 * @param name
-	 * @param sex
 	 * @param birthDate
 	 */
 	
-	public Person(int iD, String name, boolean sex, LocalDate birthDate) {
+	public Person(int iD, String name, LocalDate birthDate) {
 		ID = iD;
 		this.name = name;
-		this.sex = sex;
 		this.birthDate = birthDate;
 	}
 
@@ -39,14 +36,6 @@ public class Person {
 	
 	public void setName(String name) {
 		this.name = name;
-	}
-	
-	public boolean isSex() {
-		return sex;
-	}
-	
-	public void setSex(boolean sex) {
-		this.sex = sex;
 	}
 	
 	public LocalDate getBirthDate() {

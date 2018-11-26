@@ -1,4 +1,4 @@
-package com.netcracker.ex1;
+package com.netcracker;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

@@ -7,5 +7,7 @@ public class PersonRepository {
 	private int size;
 	private Person[] people;
 	
-	
+	public void addPerson(Person people) {
+
+	}
 }
