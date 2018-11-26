@@ -1,4 +1,4 @@
-package com.netcracker.ex1;
+package com.netcracker.entities;
 
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
@@ -8,6 +8,15 @@ public class Person {
 	private String name;
 	private boolean sex;
 	private LocalDate birthDate;
+	
+	
+	/**
+	 * Constructor class Person
+	 * @param iD
+	 * @param name
+	 * @param sex
+	 * @param birthDate
+	 */
 	
 	public Person(int iD, String name, boolean sex, LocalDate birthDate) {
 		ID = iD;
@@ -50,7 +59,7 @@ public class Person {
 	
 	/**
 	 * 
-	 * @return возраст человека
+	 * @return 
 	 */
 	
 	public int getAge() {

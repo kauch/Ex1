@@ -1,4 +1,6 @@
-package com.netcracker.ex1;
+package com.netcracker;
+
+import com.netcracker.entities.Person;
 
 public class PersonRepository {
 	

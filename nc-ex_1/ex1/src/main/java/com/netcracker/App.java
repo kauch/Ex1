@@ -1,4 +1,4 @@
-package com.netcracker.ex1;
+package com.netcracker;
 
 /**
  * Hello world!
