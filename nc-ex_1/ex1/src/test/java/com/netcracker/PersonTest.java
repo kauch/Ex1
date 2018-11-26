@@ -20,10 +20,10 @@ public class PersonTest extends TestCase {
 	        assertEquals(1, personTest1.getID());
 	    }
 
-	    @Test
+	   /* @Test
 	    public void getName() throws Exception {
 	        assertEquals("Surname", personTest1.getName());
-	    }
+	    }*/
 
 	    @Test
 	    public void getBirthDate() throws Exception {
