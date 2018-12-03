@@ -1,9 +1,8 @@
 package com.netcracker;
 
-import java.util.logging.LogManager;
-import java.util.logging.Logger;
-
 import com.netcracker.entities.Person;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class PersonRepository {
 	/** Поле массив людей*/
@@ -12,7 +11,9 @@ public class PersonRepository {
     private int quantity; // передаем в конструктор для обозначения изначального размера массива
     /** Поле количества людей в массиве*/
 
-    private int counter=0;
+    private static final Logger log = LogManager.getLogger(PersonRepository.class.getName());
+    
+    private int counter = 0;
 
     public PersonRepository(){}
 
