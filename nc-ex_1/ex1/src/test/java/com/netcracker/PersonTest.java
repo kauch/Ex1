@@ -4,10 +4,11 @@ import com.netcracker.entities.Person;
 import org.joda.time.LocalDate;
 import org.junit.Test;
 
-import junit.framework.TestCase;
+//import junit.framework.TestCase;
+import static org.junit.Assert.*;
 
-public class PersonTest extends TestCase {
-	  Person personTest1 = new Person(1, "Surname", new LocalDate(1990, 10, 3));
+public class PersonTest {
+	  Person personTest1 = new Person(1, "Name", new LocalDate(1990, 10, 3));
 
 	    @Test
 	    public void getAge() throws Exception {
@@ -20,10 +21,10 @@ public class PersonTest extends TestCase {
 	        assertEquals(1, personTest1.getID());
 	    }
 
-	   /* @Test
+	    @Test
 	    public void getName() throws Exception {
-	        assertEquals("Surname", personTest1.getName());
-	    }*/
+	    	assertEquals("Name", personTest1.getName());
+	    }
 
 	    @Test
 	    public void getBirthDate() throws Exception {

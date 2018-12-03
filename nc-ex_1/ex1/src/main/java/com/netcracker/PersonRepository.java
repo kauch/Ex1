@@ -63,10 +63,10 @@ public class PersonRepository {
      * @param index - индекс в массиве
      */
     public  void remove(int index){
-        Person[] new1 = new Person[quantity - 1];
-        System.arraycopy(people, 0, new1, 0, people.length - index - 1);
-        System.arraycopy(people, index + 1, new1, index, people.length - index - 1);
-        people = new1;
+        Person[] newPeople = new Person[quantity - 1];
+        System.arraycopy(people, 0, newPeople, 0, people.length - index - 1);
+        System.arraycopy(people, index + 1, newPeople, index, people.length - index - 1);
+        people = newPeople;
         counter--;
         quantity--;
     }
@@ -77,7 +77,7 @@ public class PersonRepository {
     public void printItems(){
         for(int i = 0; i < counter; i++){
             if (people[i] == null) break;
-            System.out.println(people[i].toString() + ", Age: " +people[i].getAge());
+            System.out.println(people[i].toString() + ", Age: " + people[i].getAge());
         }
     }
 
