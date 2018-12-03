@@ -1,6 +1,7 @@
 package test;
 
 import com.netcracker.entities.Person;
+
 import org.joda.time.LocalDate;
 import org.junit.Test;
 
@@ -13,7 +14,7 @@ public class PersonTest {
 	    @Test
 	    public void getAge() throws Exception {
 	        int actualAge = personTest1.getAge();
-	        assertEquals(28, actualAge);
+	        assertEquals(1, actualAge);
 	    }
 
 	    @Test
@@ -21,9 +22,10 @@ public class PersonTest {
 	        assertEquals(1, personTest1.getID());
 	    }
 
-	    @Test
-	    public void getName() throws Exception {
-	    	assertEquals("Name", personTest1.getName());
+	   @Test
+	    public void getNamePerson() throws Exception {
+		   String name = personTest1.getName();
+		   assertEquals("Name", name);
 	    }
 
 	    @Test
