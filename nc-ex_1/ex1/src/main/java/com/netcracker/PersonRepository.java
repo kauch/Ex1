@@ -2,9 +2,6 @@ package com.netcracker;
 
 import com.netcracker.entities.Person;
 
-import java.util.Comparator;
-import java.util.function.Predicate;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -28,14 +25,6 @@ public class PersonRepository {
     public PersonRepository(int quantity){
         this.people = new Person[quantity];
         this.quantity = quantity;
-    }
-
-    /**
-     * Размер списка
-     * @return размер
-     */
-    public int size(){
-        return counter;
     }
 
     /**
