@@ -4,30 +4,30 @@ import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 
 public class Person {
-	private int ID;
+	private int id;
 	private String name;
 	private LocalDate birthDate;
 	
 	
 	/**
 	 * Constructor class Person
-	 * @param iD
+	 * @param id
 	 * @param name
 	 * @param birthDate
 	 */
 	
-	public Person(int iD, String name, LocalDate birthDate) {
-		ID = iD;
+	public Person(int id, String name, LocalDate birthDate) {
+		this.id = id;
 		this.name = name;
 		this.birthDate = birthDate;
 	}
 
 	public int getID() {
-		return ID;
+		return id;
 	}
 	
 	public void setID(int iD) {
-		ID = iD;
+		id = iD;
 	}
 	
 	public String getName() {
