@@ -1,6 +1,10 @@
 package com.netcracker;
 
 import com.netcracker.entities.Person;
+
+import java.util.Comparator;
+import java.util.function.Predicate;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

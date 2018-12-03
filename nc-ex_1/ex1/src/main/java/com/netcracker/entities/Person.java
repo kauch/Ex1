@@ -1,7 +1,7 @@
 package com.netcracker.entities;
 
-import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
+import org.joda.time.Years;
 
 public class Person {
 	private int id;
@@ -52,16 +52,6 @@ public class Person {
 	 */
 	
 	public int getAge() {
-		DateTime current = new DateTime();
-        int age = current.getYear() - birthDate.getYear();
-        if(birthDate.getMonthOfYear() > current.getMonthOfYear()) {
-        	age--;
-        }
-        
-        if(birthDate.getMonthOfYear() == current.getMonthOfYear() 
-        		&& birthDate.getDayOfMonth() < current.getDayOfMonth()) {
-        	age++;
-        }
-        return age;
+		return Years.yearsBetween(birthDate, LocalDate.now()).getYears();
 	}
 }
