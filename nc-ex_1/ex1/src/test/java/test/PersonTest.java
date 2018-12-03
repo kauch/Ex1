@@ -9,7 +9,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class PersonTest {
-	  Person personTest1 = new Person(1, "Name", new LocalDate(1990, 10, 3));
+	  Person personTest1 = new Person("Name", new LocalDate(1990, 10, 3));
 
 	    @Test
 	    public void getAge() throws Exception {

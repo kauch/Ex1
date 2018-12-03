@@ -4,31 +4,37 @@ import org.joda.time.LocalDate;
 import org.joda.time.Years;
 
 public class Person {
-	private int id;
+
 	private String name;
 	private LocalDate birthDate;
+	
+	private int ID; // 
+    private static int id = 0;
 	
 	
 	/**
 	 * Constructor class Person
-	 * @param id
 	 * @param name
 	 * @param birthDate
 	 */
 	
-	public Person(int id, String name, LocalDate birthDate) {
-		this.id = id;
-		this.name = name;
-		this.birthDate = birthDate;
+	public Person(String name, LocalDate birthDate) {
+		setName(name);
+        setBirthDate(birthDate);
+        id++;
+        setID(id);
 	}
 
-	public int getID() {
-		return id;
-	}
-	
-	public void setID(int iD) {
-		this.id = iD;
-	}
+
+    private void setID(int ID) { 
+    	this.ID = ID; 
+    }
+
+
+    public int getID() { 
+    	return ID; 
+    }
+
 	
 	public String getName() {
 		return name;
@@ -54,4 +60,11 @@ public class Person {
 	public int getAge() {
 		return Years.yearsBetween(birthDate, LocalDate.now()).getYears();
 	}
+	
+	 public String toString(){
+	        return "Class: " + this.getClass().getSimpleName() + 
+	        		", Surname:" + getName() + 
+	        		", ID:" + getID() + 
+	        		", Date of birth:" + getBirthDate();
+	 }
 }
