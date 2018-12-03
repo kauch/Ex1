@@ -1,4 +1,4 @@
-package com.netcracker;
+package test;
 
 import com.netcracker.entities.Person;
 import org.joda.time.LocalDate;
