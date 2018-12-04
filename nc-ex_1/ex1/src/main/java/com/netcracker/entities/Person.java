@@ -52,11 +52,6 @@ public class Person {
 		this.birthDate = birthDate;
 	}
 	
-	/**
-	 * 
-	 * @return 
-	 */
-	
 	public int getAge() {
 		return Years.yearsBetween(birthDate, LocalDate.now()).getYears();
 	}

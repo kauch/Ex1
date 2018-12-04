@@ -2,19 +2,29 @@ package test;
 
 import com.netcracker.entities.Person;
 
+
+import static org.junit.Assert.assertEquals;
+
 import org.joda.time.LocalDate;
+import org.junit.Before;
+
 import org.junit.Test;
 
-//import junit.framework.TestCase;
-import static org.junit.Assert.*;
+
+//import static org.junit.Assert.*;
 
 public class PersonTest {
-	  Person personTest1 = new Person("Name", new LocalDate(1990, 10, 3));
-
+	 Person personTest1 = null;
+	 
+	 @Before
+	 public void initialize(){
+		 personTest1 = new Person("Name", new LocalDate(1990, 10, 3));
+	 }
+	 
 	    @Test
-	    public void getAge() throws Exception {
+	    public void getAgeTest() {
 	        int actualAge = personTest1.getAge();
-	        assertEquals(1, actualAge);
+	        assertEquals(28, actualAge);
 	    }
 
 	    @Test
