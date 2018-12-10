@@ -8,7 +8,7 @@ import com.netcracker.entities.Person;
 
 public class App 
 {
-	private static Logger log = LogManager.getLogger(App.class.getName());
+	private static Logger log = LogManager.getLogger(App.class);
 	
     public static void main( String[] args )
     {
@@ -17,5 +17,6 @@ public class App
         
         log.info("Age of person: " + person1.toString() + ":" + person1.getAge());
         log.error("Age of person: " + person2.toString() + ": " + person2.getAge());
+        log.debug("Age of person: " + person2.toString() + ": " + person2.getAge());
     }
 }
