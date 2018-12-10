@@ -83,7 +83,7 @@ public class PersonRepository {
      */
     public Person[] find(Predicate<Person> predicate){
     	PersonRepository listPeople = new PersonRepository(5);
-        for(int i=0; i<counter; i++){
+        for(int i = 0; i < counter; i++){
             if(predicate.test(people[i]))
                 listPeople.add(people[i]);
         }
