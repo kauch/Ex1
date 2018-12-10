@@ -15,7 +15,7 @@ public class App
     	Person person1 = new Person("Ivanov", new LocalDate(1996, 8, 29));
         Person person2 = new Person("Sidorov", new LocalDate(2000, 7, 26));
         
-        log.error("Age of person: " + person1.toString() + ":" + person1.getAge());
+        log.info("Age of person: " + person1.toString() + ":" + person1.getAge());
         log.error("Age of person: " + person2.toString() + ": " + person2.getAge());
     }
 }

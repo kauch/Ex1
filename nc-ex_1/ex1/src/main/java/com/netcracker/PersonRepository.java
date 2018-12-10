@@ -2,6 +2,8 @@ package com.netcracker;
 
 import com.netcracker.entities.Person;
 
+import java.util.function.Predicate;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,7 +15,7 @@ public class PersonRepository {
     /** Поле количества людей в массиве*/
 
     private static final Logger log = LogManager.getLogger(PersonRepository.class.getName());
-    
+
     private int counter = 0;
 
     public PersonRepository(){}
@@ -73,5 +75,31 @@ public class PersonRepository {
             System.out.println(people[i].toString() + ", Age: " + people[i].getAge());
         }
     }
-
+    
+    /**
+     * Универсальный поиск по коллекции
+     * @param predicate - предикат
+     * @return объект, найденный по параметру поиска
+     */
+    public Person[] find(Predicate<Person> predicate){
+    	PersonRepository listPeople = new PersonRepository(5);
+        for(int i=0; i<counter; i++){
+            if(predicate.test(people[i]))
+                listPeople.add(people[i]);
+        }
+        return listPeople.toArray();
+    }
+    
+    /**
+     * @return возвращает массив без пустых ячеек
+     */
+    public Person[] toArray(){
+    	Person[] newPeople =  new Person[counter];
+        System.arraycopy(people, 0, newPeople, 0, counter );
+        return newPeople;
+    }
+    
 }
+
+
+
