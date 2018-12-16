@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
@@ -34,14 +35,19 @@ public class Injector {
             field.setAccessible(true);								 // Отмена проверок доступа
             if(field.isAnnotationPresent(AutoInjectable.class)){
                 try {
-                    field.set(object, Class.forName(properties.getProperty(field.getType().getName())).newInstance());
+                    field.set(object, Class.forName(properties.getProperty(field.getType().getName())).getDeclaredConstructor().newInstance());
                 } catch (IllegalAccessException e) {
                 	log.info("IllegalAccessException", e);
+                } catch (NoSuchMethodException  e) {
+                	log.info("NoSuchMethodException ", e);
                 } catch (InstantiationException e) {
                 	log.info("InstantiationException", e);
                 } catch (ClassNotFoundException e) {
                 	log.info("ClassNotFoundException", e);
+                }catch (InvocationTargetException e) {
+                	log.info("InvocationTargetException ", e);
                 }
+                
             }
         }
 
