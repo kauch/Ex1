@@ -2,7 +2,13 @@ package com.netcracker.sorter;
 
 import java.util.Comparator;
 
-public class ShakerSort implements MySortable {
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class ShakerSort implements IMySortable {
+	
+	private static Logger log = LogManager.getLogger(ShakerSort.class);
+	
     /**
      * Шейкерная сортировка
      * @param mas - массив, который сортируем
@@ -10,7 +16,7 @@ public class ShakerSort implements MySortable {
      * @return отсортированный массив
      */
     public void sort(Object[] mas, Comparator comparator, int counter) {
-        System.out.println("Sort type: shaker");
+    	log.info("Sort type: shaker");
         boolean wasSwapped;
         Object temp;
         do {

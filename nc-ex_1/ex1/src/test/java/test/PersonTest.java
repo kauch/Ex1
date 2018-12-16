@@ -1,7 +1,7 @@
 package test;
 
 import com.netcracker.entities.Person;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 import org.joda.time.LocalDate;
 import org.junit.Before;
 import org.junit.Test;

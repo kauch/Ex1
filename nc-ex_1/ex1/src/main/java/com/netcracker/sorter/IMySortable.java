@@ -2,7 +2,7 @@ package com.netcracker.sorter;
 
 import java.util.Comparator;
 
-public interface MySortable {
+public interface IMySortable {
     /**
      * Сортирока списка
      * @param mas список
