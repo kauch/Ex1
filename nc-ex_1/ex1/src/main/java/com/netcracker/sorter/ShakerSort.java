@@ -1,7 +1,5 @@
 package com.netcracker.sorter;
 
-import com.netcracker.entities.Person;
-
 import java.util.Comparator;
 
 public class ShakerSort implements MySortable {
@@ -11,7 +9,6 @@ public class ShakerSort implements MySortable {
      * @param comparator - компаратор
      * @return отсортированный массив
      */
-    @Override
     public void sort(Object[] mas, Comparator comparator, int counter) {
         System.out.println("Sort type: shaker");
         boolean wasSwapped;

@@ -1,11 +1,9 @@
 package com.netcracker.sorter;
 
-import com.netcracker.entities.Person;
-
 import java.util.Comparator;
 
 public class BubbleSort implements MySortable {
-    @Override
+   
     /**
      * сортировка пузырьком
      * @param mas  - массив, который сортируем

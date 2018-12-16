@@ -1,7 +1,5 @@
 package com.netcracker.sorter.generics;
 
-import com.netcracker.entities.Person;
-
 import java.util.Comparator;
 
 public class ShakerSortT<T> implements MySortableT<T>{
