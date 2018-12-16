@@ -1,9 +1,15 @@
 package com.netcracker.sorter.generics;
 import java.util.Comparator;
 
-public class BubbleSortT<T> implements MySortableT<T>{
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class BubbleSortT<T> implements IMySortableT<T>{
+	
+	private static Logger log = LogManager.getLogger(BubbleSortT.class);
+	
     public void sort(T[] mas, Comparator<T> comparator, int counter) {
-        System.out.println("Sort type: bubble");
+    	log.info("Sort type: bubble");
         T temp;
         for(int i=0; i<counter-1; i++) {
             for (int j = counter - 1; j > i; j--) {

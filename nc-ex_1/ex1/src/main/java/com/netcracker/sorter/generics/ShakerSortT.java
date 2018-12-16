@@ -2,9 +2,15 @@ package com.netcracker.sorter.generics;
 
 import java.util.Comparator;
 
-public class ShakerSortT<T> implements MySortableT<T>{
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class ShakerSortT<T> implements IMySortableT<T>{
+	
+	private static Logger log = LogManager.getLogger(ShakerSortT.class);
+	
     public void sort(T[] mas, Comparator<T> comparator, int counter) {
-        System.out.println("Sort type: shaker");
+    	log.info("Sort type: shaker");
         boolean wasSwapped;
         T temp;
         do {
