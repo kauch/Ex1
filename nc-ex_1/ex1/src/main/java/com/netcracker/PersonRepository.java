@@ -1,7 +1,11 @@
 package com.netcracker;
 
+import com.netcracker.cheker.IPersonChecker;
 import com.netcracker.entities.Person;
+import com.netcracker.injector.Injector;
+import com.netcracker.sorter.Sorting;
 
+import java.util.Comparator;
 import java.util.function.Predicate;
 
 import org.apache.logging.log4j.LogManager;
@@ -77,18 +81,30 @@ public class PersonRepository {
     }
     
     /**
-     * Универсальный поиск по коллекции
      * @param predicate - предикат
      * @return объект, найденный по параметру поиска
      */
-    public Person[] find(Predicate<Person> predicate){
+    public Person[] find(IPersonChecker checker, Object obj){
     	PersonRepository listPeople = new PersonRepository(5);
         for(int i = 0; i < counter; i++){
-            if(predicate.test(people[i]))
+            if(checker.check(people[i], obj))
                 listPeople.add(people[i]);
         }
         return listPeople.toArray();
     }
+
+    
+    /**
+     * Сортировка
+     * @param comp компаратор
+     */
+    
+    public void sortBy(Comparator<Person> comp){
+        Sorting sorter = (Sorting) (new Injector()).inject(new Sorting());
+        log.debug("sort type" + sorter.toString());
+         sorter.sort(people, comp, counter);
+
+     }
     
     /**
      * @return возвращает массив без пустых ячеек
