@@ -13,7 +13,8 @@ import org.apache.logging.log4j.Logger;
 
 public class Injector {
 	private static Logger log = LogManager.getLogger(Injector.class);
-    private Properties properties;
+    
+	private Properties properties;
 
     public Injector(){
         properties = new Properties();
@@ -23,11 +24,9 @@ public class Injector {
             if(stream!=null){
                 properties.load(stream);
             }
-        } catch (FileNotFoundException e) {
-        	log.info("FileNotFoundException", e);
-        } catch (IOException e) {
-        	log.info("IOException", e);
-        }
+        } catch (Exception e) {
+        	log.info("Exception", e);
+        } 
     }
 
     public Object inject(Object object){
@@ -36,18 +35,9 @@ public class Injector {
             if(field.isAnnotationPresent(AutoInjectable.class)){
                 try {
                     field.set(object, Class.forName(properties.getProperty(field.getType().getName())).getDeclaredConstructor().newInstance());
-                } catch (IllegalAccessException e) {
-                	log.info("IllegalAccessException", e);
-                } catch (NoSuchMethodException  e) {
-                	log.info("NoSuchMethodException ", e);
-                } catch (InstantiationException e) {
-                	log.info("InstantiationException", e);
-                } catch (ClassNotFoundException e) {
-                	log.info("ClassNotFoundException", e);
-                }catch (InvocationTargetException e) {
-                	log.info("InvocationTargetException ", e);
-                }
-                
+                } catch (Exception e) {
+                	log.info("Exception", e);
+                } 
             }
         }
 
