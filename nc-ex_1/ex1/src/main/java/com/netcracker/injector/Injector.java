@@ -31,7 +31,7 @@ public class Injector {
 
     public Object inject(Object object){
         for(Field field : object.getClass().getDeclaredFields()){
-            field.setAccessible(true);								 // Отмена проверок доступа
+            field.setAccessible(true);								 
             if(field.isAnnotationPresent(AutoInjectable.class)){
                 try {
                     field.set(object, Class.forName(properties.getProperty(field.getType().getName())).getDeclaredConstructor().newInstance());
