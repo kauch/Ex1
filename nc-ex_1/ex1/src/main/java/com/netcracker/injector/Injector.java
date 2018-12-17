@@ -1,11 +1,8 @@
 package com.netcracker.injector;
 
 import com.netcracker.annotation.AutoInjectable;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
@@ -40,7 +37,6 @@ public class Injector {
                 } 
             }
         }
-
         return object;
     }
 }
