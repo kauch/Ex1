@@ -4,10 +4,7 @@ import com.netcracker.cheker.IPersonChecker;
 import com.netcracker.entities.Person;
 import com.netcracker.injector.Injector;
 import com.netcracker.sorter.Sorting;
-
 import java.util.Comparator;
-import java.util.function.Predicate;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
