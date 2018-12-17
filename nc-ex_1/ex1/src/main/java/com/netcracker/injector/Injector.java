@@ -17,11 +17,11 @@ public class Injector {
 
     public Injector(){
         properties = new Properties();
-        InputStream fis = getClass().getClassLoader().getResourceAsStream("app.properties");
+        InputStream stream = getClass().getClassLoader().getResourceAsStream("app.properties");
 
         try {
-            if(fis!=null){
-                properties.load(fis);
+            if(stream!=null){
+                properties.load(stream);
             }
         } catch (FileNotFoundException e) {
         	log.info("FileNotFoundException", e);
