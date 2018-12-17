@@ -1,6 +1,7 @@
 package com.netcracker;
 
 import com.netcracker.cheker.IPersonChecker;
+import com.netcracker.comparator.IPersonComparator;
 import com.netcracker.entities.Person;
 import com.netcracker.injector.Injector;
 import com.netcracker.sorter.Sorting;
@@ -96,10 +97,10 @@ public class PersonRepository {
      * @param comp компаратор
      */
     
-    public void sortBy(Comparator<Person> comp){
+    public void sortBy(IPersonComparator comp){
         Sorting sorter = (Sorting) (new Injector()).inject(new Sorting());
         log.debug("sort type" + sorter.toString());
-         sorter.sort(people, comp, counter);
+        sorter.sort(people, comp, counter);
 
      }
     

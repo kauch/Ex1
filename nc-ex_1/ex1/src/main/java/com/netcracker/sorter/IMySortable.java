@@ -1,13 +1,15 @@
 package com.netcracker.sorter;
 
-import java.util.Comparator;
+
+import com.netcracker.comparator.IPersonComparator;
+import com.netcracker.entities.Person;
 
 public interface IMySortable {
     /**
      * Сортирока списка
      * @param mas список
-     * @param comparator параметр сортировки
+     * @param comp параметр сортировки
      * @param counter количество элементов в массиве
      */
-    void sort(Object[] mas, Comparator comparator, int counter);
+    void sort(Person[] mas, IPersonComparator comp, int counter);
 }

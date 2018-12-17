@@ -1,9 +1,10 @@
 package com.netcracker.sorter;
 
-import java.util.Comparator;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import com.netcracker.comparator.IPersonComparator;
+import com.netcracker.entities.Person;
 
 public class BubbleSort implements IMySortable {
 	
@@ -14,9 +15,9 @@ public class BubbleSort implements IMySortable {
      * @param comparator - компаратор
      * @return отсортированный массив
      */
-    public void sort(Object[] mas, Comparator comparator, int counter) {
+    public void sort(Person[] mas, IPersonComparator comparator, int counter) {
     	log.info("Sort type: bubble");
-        Object temp;
+    	Person temp;
         for(int i=0; i<counter-1; i++) {
             for (int j = counter - 1; j > i; j--) {
                 if (comparator.compare(mas[j - 1], mas[j]) >= 1) {

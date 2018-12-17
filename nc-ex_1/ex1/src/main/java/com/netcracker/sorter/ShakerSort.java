@@ -5,6 +5,9 @@ import java.util.Comparator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.netcracker.comparator.IPersonComparator;
+import com.netcracker.entities.Person;
+
 public class ShakerSort implements IMySortable {
 	
 	private static Logger log = LogManager.getLogger(ShakerSort.class);
@@ -15,10 +18,10 @@ public class ShakerSort implements IMySortable {
      * @param comparator - компаратор
      * @return отсортированный массив
      */
-    public void sort(Object[] mas, Comparator comparator, int counter) {
+    public void sort(Person[] mas, IPersonComparator comparator, int counter) {
     	log.info("Sort type: shaker");
         boolean wasSwapped;
-        Object temp;
+        Person temp;
         do {
             wasSwapped=false;
             for (int i = 0; i < counter - 2; i++) {
