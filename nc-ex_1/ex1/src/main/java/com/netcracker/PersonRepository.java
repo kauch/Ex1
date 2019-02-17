@@ -5,7 +5,6 @@ import com.netcracker.comparator.IPersonComparator;
 import com.netcracker.entities.Person;
 import com.netcracker.injector.Injector;
 import com.netcracker.sorter.Sorting;
-import java.util.Comparator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
